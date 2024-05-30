@@ -4,9 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Page/Login';
-import Detail from './Page/Detail';
+import Detail from './Page/Detail.tsx';
 import Summary from './Page/Summary';
-import Home from './Page/Home.Tsx';
+import Home from './Page/Home.tsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,14 +15,10 @@ root.render(
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/product/:id" component={Detail} />
+        <Route path="/detail/:productId" element ={<Detail/>}/>
         <Route path="/summary" element={<Summary />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
